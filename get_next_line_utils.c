@@ -6,7 +6,7 @@
 /*   By: cberganz <cberganz@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2021/12/03 19:51:39 by cberganz          #+#    #+#             */
-/*   Updated: 2021/12/05 17:25:54 by cberganz         ###   ########.fr       */
+/*   Updated: 2021/12/07 16:59:00 by cberganz         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,7 +22,7 @@ size_t	ft_strlen(const char *s)
 	return (len);
 }
 
-int	not_a_line(char *save)
+int	no_newline_in(char *save)
 {
 	if (save)
 	{
@@ -40,6 +40,7 @@ char	*ft_join(char *s1, char *s2)
 {
 	char	*str;
 	size_t	i;
+	size_t	j;
 
 	i = 0;
 	if (!s1)
@@ -53,18 +54,18 @@ char	*ft_join(char *s1, char *s2)
 	if (!str)
 		return (NULL);
 	i = 0;
-	while (*s1)
+	j = 0;
+	while (s1[i])
 	{
-		str[i] = *s1;
+		str[i] = s1[i];
 		i++;
-		s1++;
 	}
-	while (*s2)
+	while (s2[j])
 	{
-		str[i] = *s2;
-		i++;
-		s2++;
+		str[i + j] = s2[j];
+		j++;
 	}
-	str[i] = '\0';
+	str[i + j] = '\0';
+	free(s1);
 	return (str);
 }
