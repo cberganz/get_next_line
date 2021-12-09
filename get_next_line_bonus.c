@@ -83,7 +83,6 @@ char	*ft_read(int fd, char *save)
 		read_return = read(fd, buffer, BUFFER_SIZE);
 		if (read_return < 0)
 		{
-			free(save);
 			free(buffer);
 			return (NULL);
 		}
