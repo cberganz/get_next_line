@@ -4,6 +4,7 @@
 | :-: | :-: |
 | Description | Reading a file descriptor line by line using a buffer |
 | Technologies | <a href="#"><img alt="C" src="https://custom-icon-badges.demolab.com/badge/C-03599C.svg?logo=c-in-hexagon&logoColor=white&style=for-the-badge"></a> |
+| External libraries | read(), malloc(), free() |
 | Final grade | 125/125 |
 
 ## Usage
