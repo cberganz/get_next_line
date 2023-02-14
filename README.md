@@ -17,13 +17,15 @@ Now insert the following code inside the file test.c :
 ```c
 #include "get_next_line_bonus.h"
 #include <stdio.h>
+#include <sys/stat.h>
+#include <fcntl.h>
 
 int main(int argc, char *argv[])
 {
   char  *line;
   int fd;
  
-  if (argc != 1)
+  if (argc != 2)
     return 1;
   fd = open(argv[1], O_RDONLY);
   if (fd == -1)
